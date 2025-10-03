@@ -122,7 +122,8 @@ if __name__ == "__main__":
     detail, total = acme.run_payroll("monthly")
     print(f"Payroll for {acme.name} (monthly):")
     for emp in acme.list_employees():
-        print(f"  {emp.emp_id:<4} {emp.name:<15} -> ${detail[emp.emp_id]:,.2f}")
+        print(emp.emp_id, emp.name, "->", detail[emp.emp_id])
+
     print(f"Total payroll: ${total:,.2f}")
     fired = acme.fire("H001")
     print(f"Fired: {fired.name} ({fired.emp_id})")
